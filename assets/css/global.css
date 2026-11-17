@@ -1,0 +1,257 @@
+*{
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f6f8fc;
+
+}
+
+
+
+.content {
+    padding: 1rem;
+    background-color: #fff;
+    height: 100vh;
+    width: 100vw;
+}
+
+
+@media screen and (min-width: 992px) {
+    .content {
+        max-width: 992px ;
+        margin: 1rem auto;
+        height: auto;
+        border-radius: 1rem;
+
+
+    }
+}
+
+
+.content h1 {
+    margin: 0;
+
+}
+
+
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1rem;
+    background-color: #f6f8fc;
+}
+
+/* Cartão principal */
+.detail-card {
+    width: 100%;
+    max-width: 420px;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    color: #fff;
+}
+
+/* Cabeçalho colorido */
+.detail-header {
+    padding: 1.5rem 1.5rem 0 1.5rem;
+}
+
+.back-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+    margin-bottom: 0.75rem;
+}
+
+.header-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.detail-name {
+    text-transform: capitalize;
+    margin: 0;
+    font-size: 2rem;
+}
+
+.detail-number {
+    font-weight: bold;
+    font-size: 1rem;
+    opacity: 0.85;
+}
+
+.detail-types {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0 0;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.detail-types .type {
+    padding: 0.25rem 0.85rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    filter: brightness(1.1);
+    text-transform: capitalize;
+}
+
+/* Imagem sobreposta entre o fundo colorido e o branco */
+.detail-image-container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 3;
+    margin-bottom: -2.5rem;
+}
+
+.detail-image-container img {
+    height: 180px;
+    max-width: 80%;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.2));
+}
+
+.detail-image-container::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    width: 140px;
+    height: 18px;
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.28) 0%, rgba(0, 0, 0, 0) 70%);
+    border-radius: 50%;
+    z-index: -1; /* Fica atrás do Pokémon, mas na frente do fundo branco */
+    pointer-events: none;
+}
+
+/* Parte branca inferior */
+.detail-body {
+    background-color: #fff;
+    color: #303943;
+    border-radius: 2rem 2rem 0 0;
+    padding: 3.2rem 1.5rem 2rem 1.5rem;
+}
+
+.detail-body h3 {
+    margin: 1.25rem 0 0.75rem 0;
+    font-size: 1rem;
+    color: #303943;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 0.35rem;
+}
+
+.detail-body h3:first-child {
+    margin-top: 0;
+}
+
+.info-row, .stat-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.6rem;
+    font-size: 0.875rem;
+}
+
+.label {
+    width: 90px;
+    color: #8c939a;
+    font-weight: 500;
+}
+
+.value {
+    color: #303943;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+/* Barras de Base Stats */
+.stat-val {
+    width: 38px;
+    font-weight: bold;
+    color: #303943;
+}
+
+.bar-bg {
+    flex: 1;
+    height: 6px;
+    background-color: #e8ecf1;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 100%;
+    background-color: #4bc07a;
+    border-radius: 3px;
+}
+
+.bar-fill.total {
+    background-color: #5b9bd5;
+}
+
+.detail-card {
+    position: relative; /* <-- ADICIONE ESTA LINHA */
+    width: 100%;
+    max-width: 420px;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    color: #fff;
+}
+
+
+.detail-card::after {
+    content: "";
+    position: absolute;
+    top: 105px;
+    right: -35px;
+    width: 220px;
+    height: 220px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%23ffffff' fill-opacity='0.18' d='M50 5a45 45 0 0 1 44.7 40H74.5a25 25 0 0 0-49 0H5.3A45 45 0 0 1 50 5zm0 90a45 45 0 0 1-44.7-40h20.2a25 25 0 0 0 49 0h20.2A45 45 0 0 1 50 95zm0-60a15 15 0 1 1 0 30 15 15 0 0 1 0-30z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+    pointer-events: none; /* Garante que não atrapalhe nenhum clique */
+    z-index: 1;
+}
+
+.detail-header,
+.detail-body {
+    position: relative;
+    z-index: 2;
+}
+
+content {
+    position: relative;
+    /* Removemos o overflow: hidden daqui para a Pokébola não ser cortada */
+}
+
+/* Pokébola bem visível no canto superior direito da tela inicial */
+.content::after {
+    content: "";
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    width: 260px;
+    height: 260px;
+    /* Aumentamos a opacidade para 0.12 para ficar no tom cinza exato da imagem */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%238c939a' fill-opacity='0.14' d='M50 5a45 45 0 0 1 44.7 40H74.5a25 25 0 0 0-49 0H5.3A45 45 0 0 1 50 5zm0 90a45 45 0 0 1-44.7-40h20.2a25 25 0 0 0 49 0h20.2A45 45 0 0 1 50 95zm0-60a15 15 0 1 1 0 30 15 15 0 0 1 0-30z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Garante que o título, os cards e o botão fiquem por cima dela */
+.content h1,
+.content .pokemons,
+.content .pagination {
+    position: relative;
+    z-index: 1;
+}
